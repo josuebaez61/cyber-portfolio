@@ -1,0 +1,17 @@
+@import '~src/assets/scss/settings/colors';
+@import '~src/assets/scss/utilities/mixins';
+
+li {
+    .domain {
+        display: inline;
+        @include bootstrapmedia(md) {
+            display: none;
+        }
+        color: $electric-blue;
+    }
+    &:hover {
+        .domain{
+            display: inline;
+        }
+    }
+}

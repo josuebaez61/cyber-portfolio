@@ -1,0 +1,40 @@
+<section class="row no-gutters row-cols-1 row-cols-md-3 animate__animated animate__zoomIn animate__faster">
+    <div class="col-md-9 h-100">
+        <div class="card card--cut-corner-top-left">
+            <div class="card-header card-header--cyber-green">
+                <i class="fa fa-barcode" aria-hidden="true"></i> PORTFOLIO
+            </div>
+            <div class="card-body">
+                <img class="card-img-top d-md-none animate__animated animate__jello animate__faster" src="assets/images/avatar.png" alt="avatar">
+                <h5 class="card-title">// FILE_NAME "JOSUE BAEZ"</h5>
+                <p>¡Hola! Soy Josué, desarrollador de aplicaciones web, y te doy la bienvenida ami portafolio.</p>
+            </div>
+            <div class="card-footer">
+                <span [ngSwitch]="displayIcons">
+                    <div *ngSwitchCase="true" class="animate__animated animate__flipInX animate__faster languajes">
+                        <i class="fab fa-js"></i> <i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i>
+                        <i class="fab fa-bootstrap"></i>
+                        <i class="fab fa-sass"></i> 
+                        <img class="svg-icon" src="assets/svg/cyber-green/mysql-6.svg" alt="MySQL">
+                        <img class="svg-icon" src="assets/svg/cyber-green/webpack-icon.svg" alt="Webpack">
+                        <img class="svg-icon-text" src="assets/svg/cyber-green/jquery-2.svg" alt="jQuery">
+                        <img class="svg-icon-text" src="assets/svg/cyber-green/mongodb.svg" alt="MongoDB">
+                        <img class="svg-icon-text" src="assets/svg/cyber-green/express-109.svg" alt="Express">
+                        <i class="fab fa-angular"></i>
+                        <i class="fab fa-node-js"></i>
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div *ngSwitchCase="false">
+                        <app-decoding (stopped)="displayIcons = true" [stopIn]="1500" [refresh]="180"></app-decoding>
+                    </div>
+                    <div *ngSwitchDefault>
+                        <app-decoding (stopped)="displayIcons = true" [stopIn]="1500" [refresh]="180"></app-decoding>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 d-none d-md-flex justify-content-center align-items-center border-right border-bottom border-top">
+        <img [ngClass]="{'animate__animated animate__faster animate__jello': jello_animation}" src="assets/images/avatar.png" alt="avatar">
+    </div>
+</section>

@@ -1,0 +1,16 @@
+<section>
+    <article class="animate__animated animate__slideInLeft animate__fast">
+        <p>
+            <app-decoding [type]="'numeric'" [refresh]="1000*5"></app-decoding>
+            <app-decoding [type]="'alphanumeric'" [refresh]="1000*2" [length]="20"></app-decoding>
+            <app-decoding [type]="'alphanumeric'" [refresh]="1000*3" [length]="30"></app-decoding>
+        </p>
+    </article>
+    <article class="animate__animated animate__slideInRight animate__fast">
+        <p class="text-right">
+            <app-decoding [type]="'alphanumeric'" [refresh]="1000*2" [length]="20"></app-decoding>
+            <app-decoding [type]="'numeric'" [refresh]="1000*5"></app-decoding>
+            <app-decoding [type]="'alphanumeric'" [refresh]="1000*3" [length]="30"></app-decoding>
+        </p>
+    </article>
+</section>

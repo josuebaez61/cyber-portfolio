@@ -1,0 +1,24 @@
+<main>
+    <section class="console animate__animated animate__zoomIn animate__faster">
+        <div class="console__top">
+            <h1><small><i class="fas fa-terminal"></i></small> TERMINAL</h1>
+            <span><i class="fab fa-connectdevelop fa-spin"></i></span>
+        </div>
+        <div class="console__middle">
+            <p>
+                <span *ngFor="let cmd of cmd_list">
+                    {{ cmd }}<br>
+                </span>
+            </p>
+        </div>
+        <div class="console__bottom d-flex align-items-center justify-content-center">
+            <p *ngIf="!all_completed" class="align-self-start">
+                <app-decoding [length]="25"></app-decoding>
+            </p>
+            <h3 *ngIf="all_completed" [ngClass]="{'animate__animated animate__flash animate__faster': all_completed}">¡COMPLETADO!</h3>
+        </div>
+        <button (mouseenter)="onMouseEnter()" (click)="onClick()" *ngIf="all_completed" type="button" class="terminal-button mt-2 align-self-end animate__animated animate__zoomIn animate__faster">
+            INGRESAR
+        </button>
+    </section>
+</main>

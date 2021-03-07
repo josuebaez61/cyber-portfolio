@@ -1,0 +1,13 @@
+@import "~src/assets/scss/settings/colors";
+@import "~src/assets/scss/utilities/mixins";
+
+section {
+    color: $cyber-green;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.3rem;
+    @include bootstrapmedia(md) {
+        font-size: 0.5rem;
+    }
+
+}

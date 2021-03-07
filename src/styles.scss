@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+// @import './assets/scss/settings/root';
+@import './assets/scss/settings/colors';
+@import '~bootstrap/scss/bootstrap';
+@import './assets/scss/typo/typo';
+@import './assets/scss/settings/global';
+@import './assets/scss/components/just-code';
+@import './assets/scss/components/list-group';
+@import './assets/scss/components/header';
+@import './assets/scss/components/terminal-button';
+@import './assets/scss/components/cut-corners';
+@import './assets/scss/components/image-frame';
+/* Importing Bootstrap SCSS file. */
+@import './assets/scss/components/border';
+@import './assets/scss/components/card';

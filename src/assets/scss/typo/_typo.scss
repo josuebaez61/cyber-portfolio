@@ -1,0 +1,13 @@
+@font-face {
+    font-family: Barlow-Regular;
+    src: url('../../fonts/Barlow-Regular.ttf')
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.cyber-green-remarked {
+    background-color: $cyber-green;
+    color:$darkness-green;
+}

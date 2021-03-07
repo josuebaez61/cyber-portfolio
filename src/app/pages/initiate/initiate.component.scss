@@ -1,0 +1,78 @@
+@import '~src/assets/scss/settings/colors.scss';
+@import '~src/assets/scss/settings/variables.scss';
+@import '~src/assets/scss/utilities/mixins.scss';
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    .console {
+        font-family: Barlow-Regular;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 606px;
+        margin-left: 10px;
+        margin-right: 10px;
+        position: relative;
+        width: 95%;
+        @include bootstrapmedia(md) {
+            width: 700px;
+        }
+        
+        .console__top, .console__bottom, .console__middle {
+            padding: 10px;
+            position: relative;
+            
+        }
+        .console__top, .console__bottom {
+            height: 80px;
+            background-color: $green;
+            color: $dark-green;
+        }
+        .console__top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top-left-radius: $top-left-radius;
+            height: 55px;
+            font-size: 1.5rem;
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 0px;
+            }
+        }
+        .console__middle {
+            color: $green;
+            height: 400px;
+            background-color: $dark-green;
+            border-left: 1px solid $green;
+            border-right: 1px solid $green;
+            font-size: 1.15rem;
+            position: relative;
+        }
+        .console__middle:before {
+            content: '';
+            position: absolute;
+            bottom: 0px; right: 0px;
+            border-bottom: $cut-corner solid $green;
+            border-left: $cut-corner solid $dark-green;
+            width: 0;
+        }
+        .console__bottom:before {
+            content: '';
+            position: absolute;
+            bottom: 0px; right: 0;
+            border-bottom: $cut-corner solid $darkness-green;
+            border-left: $cut-corner solid $green;
+            width: 0;
+        }
+        .console__bottom {
+            height: 100px;
+        }
+    }
+}

@@ -1,0 +1,77 @@
+@import "~src/assets/scss/settings/colors";
+@import "~src/assets/scss/settings/variables";
+
+.terminal-button {
+  color: $green;
+  border: 1px solid $green;
+  background-color: $middle-green;
+  font-family: Barlow-Regular;
+  text-transform: uppercase;
+  padding: 5px 5px 5px 10px;
+  width: 250px;
+  text-align: left;
+  font-size: 1.5rem;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    border-left: $cut-corner solid $middle-green;
+    border-bottom: $cut-corner solid $darkness-green;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 1px;
+    background: $green;
+    transform: rotate(-45deg);
+    bottom: 5px; right: -3px;
+  }
+  &:hover {
+    background-color: $green;
+    color: $dark-green;
+    &:before {
+        border-left: $cut-corner solid $green;
+    }
+  }
+}
+
+.terminal-button--cyber-green {
+  color: $cyber-green;
+  background-color: $darkness-green;
+  border: 1px solid $cyber-green;
+  &::before {
+    border-left: $cut-corner solid $darkness-green;
+    border-bottom: $cut-corner solid $darkness-green;
+  }
+  &:after {
+    background: $cyber-green;
+  }
+  &:hover {
+    background-color: $cyber-green;
+    color: $darkness-green;
+    &:before {
+      border-left: $cut-corner solid $cyber-green;
+    }
+  }
+
+}
+.terminal-button--github {
+  font-size: 3rem;
+  width: 100%;
+  height: 100%;
+  .info {
+    font-size: 0.9rem;
+  }
+  h5 {
+    font-size: 1.3rem;
+    margin-bottom: 0px !important;
+  }
+  &:hover {
+    .hr-laser--green {
+      border-top: 1px solid $dark-green !important;
+    }
+  }
+}

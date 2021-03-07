@@ -1,0 +1,27 @@
+@import '~src/assets/scss/settings/colors';
+@import '~src/assets/scss/utilities/mixins';
+
+.card {
+    height: calc(100vh - 50px);
+    @media (orientation:landscape) {
+        height: auto;
+    }
+    @include bootstrapmedia(md) {
+        height: 300px;
+    }
+}
+
+.languajes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    img {
+        height: 1.3rem;
+    }
+    img, i {
+        margin-right: 2px;
+        @include bootstrapmedia(md) {
+            margin-right: 0px;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@import '~src/assets/scss/settings/colors';
+
+body, html {
+    background-color: $darkness-green;
+}
+
+.hr-laser {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.hr-laser--cyber-green {
+    border-top: 1px solid $cyber-green !important;
+}
+
+.hr-laser--green {
+    border-top: 1px solid $green !important;
+}

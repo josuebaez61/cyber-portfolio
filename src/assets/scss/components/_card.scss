@@ -1,0 +1,114 @@
+@import '~src/assets/scss/settings/colors.scss';
+@import '~src/assets/scss/settings/variables.scss';
+@import '~src/assets/scss/utilities/mixins.scss';
+
+.card {
+    background-color: transparent;
+    border-radius: $top-left-radius 0px 0px 0px;
+    color: $cyber-green;
+    border: 1px solid $cyber-green;
+
+    .card-header {
+        border-bottom: 1px solid $cyber-green;
+        border-radius: ($top-left-radius - 2px) 0px 0px 0px;
+        color: $cyber-green;
+        background-color: transparent;
+        text-transform: uppercase;
+    }
+    
+    .card-header--cyber-green {
+        background-color: $cyber-green;
+        color: $darkness-green;
+    }
+    
+    .card-title {
+        text-transform: uppercase;
+    }
+
+    .card-footer {
+        border-top: 1px solid $cyber-green;
+        background-color: $cyber-green-low-oppacity;
+    }
+    
+    .card-footer--transparent {
+        background-color: transparent;
+    }
+
+    .card-footer--dark {
+        background-color: $darkness-green;
+    }
+}
+
+.card--cut-corner-bottom-right {
+    @extend .cut-corner-bottom-right;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 1.5px;
+        background: $cyber-green;
+        transform: rotate(-45deg);
+        top: 5px; right: -3px;
+    }
+}
+
+.card--cut-corner-bottom-left {
+    @extend .cut-corner-bottom-left;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 2px;
+        background: $cyber-green;
+        transform: rotate(-45deg);
+        bottom: 5px; left: -4px;
+    }
+}
+
+.card--cut-corner-top-left {
+    @extend .cut-corner-top-left;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 27px;
+        height: 2px;
+        background: $cyber-green;
+        transform: rotate(-45deg);
+        top: 0px; left: -4px;
+    }
+}
+
+.card--cut-corner-top-right {
+    @extend .cut-corner-top-right;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 21px;
+        height: 3.5px;
+        background: $cyber-green;
+        transform: rotate(45deg);
+        top: 5px; right: -6px;
+    }
+}
+
+.card--cut-corner-bottom-left-and-right {
+    @extend .cut-corner-bottom-left-and-right;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 2px;
+        background: $cyber-green;
+        transform: rotate(45deg);
+        bottom: 5px; left: -4px;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 1.5px;
+        background: $cyber-green;
+        transform: rotate(-45deg);
+        bottom: 5px; right: -3px;
+    }
+}
