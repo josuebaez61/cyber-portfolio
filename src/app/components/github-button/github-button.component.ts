@@ -19,4 +19,10 @@ export class GithubButtonComponent implements OnInit {
     })
   }
 
+  openGithub( url:string ) {
+    if ( url ) {
+      window.open(url, "_blank");
+    }
+  }
+
 }

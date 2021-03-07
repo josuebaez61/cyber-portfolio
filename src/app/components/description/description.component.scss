@@ -2,7 +2,7 @@
 @import '~src/assets/scss/utilities/mixins';
 
 .card {
-    height: calc(100vh - 50px);
+    height: calc(100vh - 75px);
     @media (orientation:landscape) {
         height: auto;
     }
