@@ -6,6 +6,10 @@ import { SomeCodeComponent } from './some-code/some-code.component';
 import { GithubButtonComponent } from './github-button/github-button.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { CarouselModule } from 'primeng/carousel';
+import { ButtonModule } from 'primeng/button';
+import { ToastModule } from 'primeng/toast';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
@@ -27,7 +31,11 @@ import { ProjectsComponent } from './projects/projects.component';
     ProjectsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserModule,
+    CarouselModule,
+    ButtonModule,
+    ToastModule,
   ]
 })
 export class ComponentsModule { }

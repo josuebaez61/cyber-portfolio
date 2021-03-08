@@ -1,0 +1,37 @@
+@import '~src/assets/scss/settings/colors';
+
+:host ::ng-deep .custom-carousel.p-carousel{
+    .p-carousel-indicator.p-highlight {
+        .p-link {
+            background-color: $electric-blue;
+        }
+    }
+    .p-carousel-indicator {
+        .p-link {
+            background-color: transparent;
+            border: 1px solid $electric-blue;
+            &:focus {
+                box-shadow: 0 0 0 0.2rem $electric-blue-low-oppacity;
+            }
+        }
+    }
+
+    .p-carousel-prev, .p-carousel-next {
+        // width: 2rem;
+        // height: 2rem;
+        // color: #6c757d;
+        // border: 0 none;
+        // background: transparent;
+        // border-radius: 50%;
+        // transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+        // margin: 0.5rem;
+        color: $cyber-green;
+        &:hover {
+            color: $cyber-green;
+            background-color: $terminal-hover;
+        }
+        &:focus{
+            box-shadow: 0 0 0 0.2rem $terminal-hover;
+        }
+    }
+}

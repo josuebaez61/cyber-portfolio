@@ -4,13 +4,13 @@
 
 .card {
     background-color: transparent;
-    border-radius: $top-left-radius 0px 0px 0px;
+    border-radius: 0px;
     color: $cyber-green;
     border: 1px solid $cyber-green;
-
+    font-family: Barlow-Regular;
     .card-header {
         border-bottom: 1px solid $cyber-green;
-        border-radius: ($top-left-radius - 2px) 0px 0px 0px;
+        border-radius: 0px;
         color: $cyber-green;
         background-color: transparent;
         text-transform: uppercase;
@@ -39,13 +39,20 @@
     }
 }
 
+.card--radius-top-left {
+    border-radius: $top-left-radius 0px 0px 0px;
+    .card-header {
+        border-radius: ($top-left-radius - 2px) 0px 0px 0px;
+    }
+}
+
 .card--cut-corner-bottom-right {
     @extend .cut-corner-bottom-right;
     &::before{
         content: '';
         position: absolute;
         width: 18px;
-        height: 1.5px;
+        height: 2.8px;
         background: $cyber-green;
         transform: rotate(-45deg);
         bottom: 4px; right: -3px;

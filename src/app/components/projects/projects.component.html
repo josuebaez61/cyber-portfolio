@@ -1,8 +1,25 @@
-<div class="card card--cut-corner-bottom-right animate__animated animate__slideInLeft">
+<section class="card card--cut-corner-bottom-right animate__animated animate__slideInLeft">
     <div class="card-header text-center" style="font-size: 1.4rem;">
         PROYECTOS
     </div>
-    <div class="card-body">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga saepe hic dolorem ullam eius modi, quibusdam consequatur temporibus velit voluptatum, corrupti incidunt! At iure, quia expedita deleniti distinctio laboriosam cupiditate?
+    <div class="card-body p-2">
+        <span class="just-code cyber-green-remarked ">QtVB8k2Ic5EfTPAy1B1iFI1H4OHfZ2</span>
+        <p-carousel [styleClass]="'custom-carousel'" [value]="projects" [numVisible]="3" [numScroll]="3" [circular]="false"
+            [responsiveOptions]="responsiveOptions">
+            <ng-template let-project pTemplate="item">
+                <div class="card m-1 card--cut-corner-bottom-right">
+                    <img src="assets/images/great-coffee.png" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {{ project.name }}
+                        </h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci itaque, amet, animi, recusandae
+                            dolores vitae quaerat officiis veritatis aut pariatur eligendi cumque delectus. Nulla possimus
+                            suscipit officia est, iure porro?</p>
+                        <button class="terminal-button terminal-button--cyber-green w-100">VER</button>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
     </div>
-</div>
+</section>
