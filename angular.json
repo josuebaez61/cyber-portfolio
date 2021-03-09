@@ -36,7 +36,7 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "allowedCommonJsDependencies" : [
+            "allowedCommonJsDependencies": [
               "crypto-random-string"
             ]
           },
@@ -129,6 +129,10 @@
               "devServerTarget": "portfolio:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

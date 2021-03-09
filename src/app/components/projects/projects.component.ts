@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { ProjectsService } from '../../services/projects.service';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-export class ProjectsComponent implements OnInit {
-  projects = [
+export class ProjectsComponent implements OnInit, OnDestroy {
+  projects: any[] = [
     {
       name: 'HOLA',
       desc: 'Hola'
@@ -43,9 +45,25 @@ export class ProjectsComponent implements OnInit {
   ];
 
 
-  constructor() {}
+  constructor(private _projects: ProjectsService) {}
+
+  subscription: Subscription;
 
   ngOnInit(): void {
+    this.getProjects();
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+  goToProjectUrl(url: string) {
+    window.open(url,'_blank');
+  }
+
+  getProjects() {
+    this._projects.getProjects().subscribe( (res:any) => {
+      this.projects = res.projects;
+    });
+  }
 }

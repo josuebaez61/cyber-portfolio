@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "my-portfolio-bc108": {
+      "hosting": {
+        "portfolio": [
+          "my-portfolio-bc108"
+        ]
+      }
+    }
+  }
+}

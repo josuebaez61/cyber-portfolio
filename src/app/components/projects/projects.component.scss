@@ -1,6 +1,9 @@
 @import '~src/assets/scss/settings/colors';
 
 :host ::ng-deep .custom-carousel.p-carousel{
+    .p-item-container{
+        height: 100%;
+    }
     .p-carousel-indicator.p-highlight {
         .p-link {
             background-color: $electric-blue;
