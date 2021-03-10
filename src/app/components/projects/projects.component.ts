@@ -8,24 +8,7 @@ import { ProjectsService } from '../../services/projects.service';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
-  projects: any[] = [
-    {
-      name: 'HOLA',
-      desc: 'Hola'
-    },
-    {
-      name: 'HOLA',
-      desc: 'Hola'
-    },
-    {
-      name: 'HOLA',
-      desc: 'Hola'
-    },
-    {
-      name: 'HOLA',
-      desc: 'Hola'
-    },
-  ];
+  projects: any[] = [];
   responsiveOptions = [
     {
         breakpoint: '1024px',

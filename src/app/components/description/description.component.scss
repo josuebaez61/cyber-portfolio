@@ -2,12 +2,27 @@
 @import '~src/assets/scss/utilities/mixins';
 
 .card {
-    height: calc(100vh - 75px);
-    @media (orientation:landscape) {
+    height: calc(100vh - 80px);
+    .card-body {
+        overflow: scroll;
+    }
+    @media (orientation: landscape) {
         height: auto;
     }
     @include bootstrapmedia(md) {
-        height: 300px;
+        @media (orientation: landscape) {
+            .card-body {
+                overflow: scroll;
+            }
+        }
+    }
+    @include bootstrapmedia(lg) {
+        @media (orientation: landscape) {
+            height: 350px;
+            .card-body {
+                overflow: hidden;
+            }
+        }
     }
 }
 

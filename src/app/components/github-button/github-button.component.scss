@@ -1,0 +1,27 @@
+@import '~src/assets/scss/utilities/mixins';
+@import '~src/assets/scss/settings/colors';
+@import '~src/assets/scss/components/terminal-button';
+
+.github-button {
+    @extend .terminal-button;
+    word-break: break-word;
+    height: 290px;
+    font-size: 3rem;
+    width: 100%;
+    @include bootstrapmedia(md){
+      height: 100%;
+    }
+    .info {
+      font-size: 0.9rem;
+    }
+    h5 {
+      font-size: 1.3rem;
+      margin-bottom: 0px !important;
+    }
+    &:hover {
+      .hr-laser--green {
+        border-top: 1px solid $dark-green !important;
+      }
+    }
+  }
+  
