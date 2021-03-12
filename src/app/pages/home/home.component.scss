@@ -2,7 +2,7 @@
 @import '~src/assets/scss/settings/variables.scss';
 @import '~src/assets/scss/utilities/mixins.scss';
 
-main {
+* {
     font-family: Barlow-Regular;
     color: $cyber-green;
 }

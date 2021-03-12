@@ -10,6 +10,8 @@ import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { BrowserModule } from '@angular/platform-browser';
+import { FooterComponent } from './footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -20,7 +22,8 @@ import { BrowserModule } from '@angular/platform-browser';
     SomeCodeComponent,
     GithubButtonComponent,
     SkillsComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    FooterComponent
   ],
   exports: [
     DecodingComponent,
@@ -28,7 +31,8 @@ import { BrowserModule } from '@angular/platform-browser';
     SomeCodeComponent,
     GithubButtonComponent,
     SkillsComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -36,6 +40,7 @@ import { BrowserModule } from '@angular/platform-browser';
     CarouselModule,
     ButtonModule,
     ToastModule,
+    ReactiveFormsModule
   ]
 })
 export class ComponentsModule { }

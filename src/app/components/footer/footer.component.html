@@ -1,0 +1,62 @@
+<footer class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card card--cut-corner-bottom-left-and-right">
+                <header class="card-header card-header--cyber-green">
+                    FOOTER & CONTACTO <i class="fas fa-ellipsis-h"></i>
+                </header>
+                <div class="card-body">
+                    <h5 class="card-title">// GRACIAS</h5>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <p>Gracias por visitar mi portafolio. Podés dejar un mensaje de contacto en el siguiente formulario...</p>
+                            <p>exit();</p>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="mb-2">
+                                <div class="row">
+                                    <div class="col-6 form-group">
+                                        <label #nameLabel for="">Nombre</label>
+                                        <input (focus)="nameLabel.style.color = electricBlue" (blur)="nameLabel.style.color = cyberGreen" type="text" class="form-control"
+                                            formControlName="name" [class.is-invalid]="invalidName"
+                                        >
+                                    </div>
+                                    <div class="col-6 form-group">
+                                        <label #emailLabel for="">Email</label>
+                                        <input (focus)="emailLabel.style.color = electricBlue" (blur)="emailLabel.style.color = cyberGreen" type="email" class="form-control"
+                                            formControlName="email" [class.is-invalid]="invalidEmail"  
+                                        >
+                                    </div>
+                                    <div class="col-12 form-group">
+                                        <label #subjectLabel for="">Asunto</label>
+                                        <input (focus)="subjectLabel.style.color = electricBlue" (blur)="subjectLabel.style.color = cyberGreen" type="text" class="form-control"
+                                            formControlName="subject" [class.is-invalid]="invalidSubject" 
+                                        >
+                                    </div>
+                                    <div class="col-12 form-group">
+                                        <label #messageLabel for="">Mensaje</label>
+                                        <textarea (focus)="messageLabel.style.color = electricBlue" (blur)="messageLabel.style.color = cyberGreen" name="" id="" cols="30" rows="10" class="form-control"
+                                            formControlName="message" [class.is-invalid]="invalidMessage" 
+                                        ></textarea>
+                                    </div>
+                                    <div class="col-12 text-right">
+                                        <button type="submit" class="terminal-button terminal-button--cyber-green">
+                                            ENVIAR
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div *ngIf="sendingData" class="d-flex justify-content-between">
+                                <p>SENDING DATA</p>
+                                <app-decoding [length]="20"></app-decoding>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    Desarrollado en Angular 11
+                </footer>
+            </div>
+        </div>
+    </div>
+</footer>
