@@ -55,12 +55,16 @@ export class FooterComponent implements OnInit {
             email: '',
             subject: '',
             message: '',
-          })
+          });
           this.sendingData = false;
           this.contactForm.controls['name'].enable();
           this.contactForm.controls['email'].enable();
           this.contactForm.controls['subject'].enable();
           this.contactForm.controls['message'].enable();
+          this.contactForm.controls['name'].markAsUntouched();
+          this.contactForm.controls['email'].markAsUntouched();
+          this.contactForm.controls['subject'].markAsUntouched();
+          this.contactForm.controls['message'].markAsUntouched();
         }, (error: any) => {
           this.sendingData = false;
         });
