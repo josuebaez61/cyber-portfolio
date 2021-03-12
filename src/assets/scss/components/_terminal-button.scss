@@ -58,5 +58,27 @@
     }
   }
 
+  &:disabled {
+    border-color: $cyber-green-low-oppacity;
+    color: $cyber-green-low-oppacity;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 1px;
+      background: $cyber-green-low-oppacity;
+      transform: rotate(-45deg);
+      bottom: 5px; right: -3px;
+    }
+
+    &:hover {
+      background-color: $cyber-green-low-oppacity;
+      border-color: $cyber-green-low-oppacity;
+      color: $cyber-green-low-oppacity;
+      &:before {
+        border-left: $cut-corner solid transparent;
+      }
+    }
+  }
 }
 

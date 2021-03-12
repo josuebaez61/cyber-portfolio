@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { timingSafeEqual } from 'crypto';
 import { ProjectsService } from 'src/app/services/projects.service';
 import { tap } from 'rxjs/operators';
+import { RecaptchaErrorParameters } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-footer',
@@ -16,6 +17,7 @@ export class FooterComponent implements OnInit {
   labelColor: string = '#DDFC57';
   contactForm: FormGroup;
   sendingData: boolean = false;
+  invalidCaptcha: boolean = true;
 
   get invalidName() {
     return this.contactForm.get('name').invalid && this.contactForm.get('name').touched;
@@ -32,15 +34,26 @@ export class FooterComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private project: ProjectsService) {
     this.contactForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(1)]],
+      name: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(100)]],
       email: ['', [Validators.required, Validators.minLength(1), Validators.email]],
-      subject: ['', [Validators.required, Validators.minLength(1)],],
-      message: ['', [Validators.required, Validators.minLength(1)]],
+      subject: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(300)]],
+      message: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(1000)]],
     });
   }
 
-  
   ngOnInit(): void {
+  }
+
+  public resolved(captchaResponse: string): void {
+    if ( captchaResponse !== null ) {
+      this.invalidCaptcha = false;
+    } else {
+      this.invalidCaptcha = true;
+    }
+  }
+
+  public onError(errorDetails: RecaptchaErrorParameters): void {
+    this.invalidCaptcha = true;
   }
 
   onSubmit() {

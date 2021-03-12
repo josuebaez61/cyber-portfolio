@@ -6,41 +6,51 @@
                     FOOTER & CONTACTO <i class="fas fa-ellipsis-h"></i>
                 </header>
                 <div class="card-body">
-                    <h5 class="card-title">// GRACIAS</h5>
                     <div class="row">
-                        <div class="col-12 col-md-6">
-                            <p>Gracias por visitar mi portafolio. Podés dejar un mensaje de contacto en el siguiente formulario...</p>
-                            <p>exit();</p>
+                        <div class="col-12 col-md-6 mb-3 mb-md-0">
+                            <h5 class="card-title">// GRACIAS</h5>
+                            <p>
+                                Gracias por visitar este sitio, no dudes en dejar tu mensaje!
+                            </p>
+                            <div class="text-center"><img class="img-fluid w-100" src="assets/images/gif1.gif" alt="Gif"></div>
                         </div>
                         <div class="col-12 col-md-6">
                             <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="mb-2">
                                 <div class="row">
                                     <div class="col-6 form-group">
-                                        <label #nameLabel for="">Nombre</label>
-                                        <input (focus)="nameLabel.style.color = electricBlue" (blur)="nameLabel.style.color = cyberGreen" type="text" class="form-control"
-                                            formControlName="name" [class.is-invalid]="invalidName"
-                                        >
+                                        <label #nameLabel for="name">Nombre</label>
+                                        <input (focus)="nameLabel.style.color = electricBlue"
+                                            (blur)="nameLabel.style.color = cyberGreen" type="text" class="form-control"
+                                            formControlName="name" [class.is-invalid]="invalidName">
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label #emailLabel for="">Email</label>
-                                        <input (focus)="emailLabel.style.color = electricBlue" (blur)="emailLabel.style.color = cyberGreen" type="email" class="form-control"
-                                            formControlName="email" [class.is-invalid]="invalidEmail"  
-                                        >
+                                        <label #emailLabel for="email">Email</label>
+                                        <input (focus)="emailLabel.style.color = electricBlue"
+                                            (blur)="emailLabel.style.color = cyberGreen" type="email"
+                                            class="form-control" formControlName="email"
+                                            [class.is-invalid]="invalidEmail">
                                     </div>
                                     <div class="col-12 form-group">
-                                        <label #subjectLabel for="">Asunto</label>
-                                        <input (focus)="subjectLabel.style.color = electricBlue" (blur)="subjectLabel.style.color = cyberGreen" type="text" class="form-control"
-                                            formControlName="subject" [class.is-invalid]="invalidSubject" 
-                                        >
+                                        <label #subjectLabel for="subject">Asunto</label>
+                                        <input (focus)="subjectLabel.style.color = electricBlue"
+                                            (blur)="subjectLabel.style.color = cyberGreen" type="text"
+                                            class="form-control" formControlName="subject"
+                                            [class.is-invalid]="invalidSubject">
                                     </div>
-                                    <div class="col-12 form-group">
-                                        <label #messageLabel for="">Mensaje</label>
-                                        <textarea (focus)="messageLabel.style.color = electricBlue" (blur)="messageLabel.style.color = cyberGreen" name="" id="" cols="30" rows="10" class="form-control"
-                                            formControlName="message" [class.is-invalid]="invalidMessage" 
-                                        ></textarea>
+                                    <div class="col-12 form-group position-relative">
+                                        <label #messageLabel for="message">Mensaje</label>
+                                        <textarea (focus)="messageLabel.style.color = electricBlue"
+                                            (blur)="messageLabel.style.color = cyberGreen" name="" id="" cols="30"
+                                            rows="10" class="form-control" formControlName="message"
+                                            [class.is-invalid]="invalidMessage"></textarea>
+                                            <p class="text-right maxLengthTextArea">{{ contactForm.get('message').value.length }}/1000</p>
+                                    </div>
+                                    <div class="col-md-12 mb-2 d-flex justify-content-center">
+                                        <re-captcha (resolved)="resolved($event)" (error)="onError($event)" errorMode="handled"
+                                            siteKey="6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU"></re-captcha>
                                     </div>
                                     <div class="col-12 text-right">
-                                        <button type="submit" class="terminal-button terminal-button--cyber-green">
+                                        <button [disabled]="invalidCaptcha || contactForm.invalid" type="submit" class="terminal-button terminal-button--cyber-green">
                                             ENVIAR
                                         </button>
                                     </div>
