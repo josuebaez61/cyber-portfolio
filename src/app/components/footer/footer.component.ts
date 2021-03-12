@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { timingSafeEqual } from 'crypto';
 import { ProjectsService } from 'src/app/services/projects.service';
-import { tap } from 'rxjs/operators';
-import { RecaptchaErrorParameters } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-footer',
@@ -17,7 +14,6 @@ export class FooterComponent implements OnInit {
   labelColor: string = '#DDFC57';
   contactForm: FormGroup;
   sendingData: boolean = false;
-  invalidCaptcha: boolean = true;
 
   get invalidName() {
     return this.contactForm.get('name').invalid && this.contactForm.get('name').touched;
@@ -42,18 +38,6 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-  public resolved(captchaResponse: string): void {
-    if ( captchaResponse !== null ) {
-      this.invalidCaptcha = false;
-    } else {
-      this.invalidCaptcha = true;
-    }
-  }
-
-  public onError(errorDetails: RecaptchaErrorParameters): void {
-    this.invalidCaptcha = true;
   }
 
   onSubmit() {

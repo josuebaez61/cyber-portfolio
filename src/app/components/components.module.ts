@@ -12,7 +12,6 @@ import { ToastModule } from 'primeng/toast';
 import { BrowserModule } from '@angular/platform-browser';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RecaptchaModule } from 'ng-recaptcha';
 
 
 
@@ -42,7 +41,6 @@ import { RecaptchaModule } from 'ng-recaptcha';
     ButtonModule,
     ToastModule,
     ReactiveFormsModule,
-    RecaptchaModule
   ]
 })
 export class ComponentsModule { }

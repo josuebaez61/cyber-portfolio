@@ -12,7 +12,7 @@
                             <p>
                                 Gracias por visitar este sitio, no dudes en dejar tu mensaje!
                             </p>
-                            <div class="text-center"><img class="img-fluid w-100" src="assets/images/gif1.gif" alt="Gif"></div>
+                            <div class="text-center"><img class="img-fluid" style="width: 450px;" src="assets/images/gif1.gif" alt="Gif"></div>
                         </div>
                         <div class="col-12 col-md-6">
                             <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="mb-2">
@@ -45,12 +45,8 @@
                                             [class.is-invalid]="invalidMessage"></textarea>
                                             <p class="text-right maxLengthTextArea">{{ contactForm.get('message').value.length }}/1000</p>
                                     </div>
-                                    <div class="col-md-12 mb-2 d-flex justify-content-center">
-                                        <re-captcha (resolved)="resolved($event)" (error)="onError($event)" errorMode="handled"
-                                            siteKey="6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU"></re-captcha>
-                                    </div>
                                     <div class="col-12 text-right">
-                                        <button [disabled]="invalidCaptcha || contactForm.invalid" type="submit" class="terminal-button terminal-button--cyber-green">
+                                        <button [disabled]="contactForm.invalid" type="submit" class="terminal-button terminal-button--cyber-green">
                                             ENVIAR
                                         </button>
                                     </div>
