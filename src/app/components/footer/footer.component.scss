@@ -1,9 +1,39 @@
 @import '~src/assets/scss/settings/colors';
 
-.colorRed {
-    color: red;
-}
-
 .maxLengthTextArea {
     margin-bottom: 0px;
+}
+
+.cyber-block {
+    height: 458.5px;
+    width: 458.5px;
+    background-image: url('~src/assets/images/gif2.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .cyber-block__content {
+        height: 100%;
+        padding: 10px;
+        .cyber-block__text {
+            clip-path: 
+            polygon(
+                0% 0px,/* top left */
+                0px 0%, /* top left */
+                calc(100% - 0px) 0%, /* top right */
+                100% 0px, /* top right */
+                100% calc(100% - 12px), /* bottom right */ 
+                calc(100% - 12px) 100%, /* bottom right */ 
+                0px 100%, /* bottom left */
+                0% calc(100% - 0px) /* bottom left */
+            );
+            height: 100%;
+            padding: 15px;
+            background-color: transparentize($color: $darkness-green, $amount: 0.3);
+        }
+    }
+}
+
+.text-footer {
+    bottom: 10px;
+    right: 10px;
 }
