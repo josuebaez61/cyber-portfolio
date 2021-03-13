@@ -14,6 +14,11 @@ export class FooterComponent implements OnInit {
   labelColor: string = '#DDFC57';
   contactForm: FormGroup;
   sendingData: boolean = false;
+  sended: boolean = false;
+  sendingError: boolean = false;
+  cooldown: number = 0;
+  cooldownInterval: ReturnType<typeof setInterval>;
+  buttonSendDisabled: boolean = false;
 
   get invalidName() {
     return this.contactForm.get('name').invalid && this.contactForm.get('name').touched;
@@ -43,6 +48,7 @@ export class FooterComponent implements OnInit {
   onSubmit() {
     if (this.contactForm.valid) {
       this.sendingData = true;
+      this.buttonSendDisabled = true;
       const data = this.contactForm.value;
       this.contactForm.controls['name'].disable();
       this.contactForm.controls['email'].disable();
@@ -57,6 +63,19 @@ export class FooterComponent implements OnInit {
             message: '',
           });
           this.sendingData = false;
+          this.sended = true;
+          setTimeout(() => {
+            this.sended = false;
+            this.cooldown = 2500;
+            this.cooldownInterval = setInterval(() => {
+              this.cooldown -= 1;
+              if ( this.cooldown === 0 ) {
+                this.stopCooldown()
+                this.buttonSendDisabled=false;
+              }
+            }, 1);
+          }, 2500);
+
           this.contactForm.controls['name'].enable();
           this.contactForm.controls['email'].enable();
           this.contactForm.controls['subject'].enable();
@@ -67,7 +86,15 @@ export class FooterComponent implements OnInit {
           this.contactForm.controls['message'].markAsUntouched();
         }, (error: any) => {
           this.sendingData = false;
+          this.sendingError = true;
+          setTimeout(() => {
+            this.sendingError = false;
+          }, 2500);
         });
      }
+  }
+
+  stopCooldown() {
+    clearInterval(this.cooldownInterval);
   }
 }

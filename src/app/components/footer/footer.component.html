@@ -53,7 +53,7 @@
                                             <p class="text-right maxLengthTextArea">{{ contactForm.get('message').value.length }}/1000</p>
                                     </div>
                                     <div class="col-12 text-right">
-                                        <button [disabled]="contactForm.invalid" type="submit" class="terminal-button terminal-button--cyber-green">
+                                        <button [disabled]="contactForm.invalid || buttonSendDisabled || cooldown > 0" type="submit" class="terminal-button terminal-button--cyber-green">
                                             ENVIAR
                                         </button>
                                     </div>
@@ -63,6 +63,24 @@
                                 <p>SENDING DATA</p>
                                 <app-decoding [length]="20"></app-decoding>
                             </div>
+                            <div *ngIf="sended" class="animate__animated animate__flash animate__fast animate__infinite">
+                                <div class="d-flex justify-content-between">
+                                    <p>// SENDING DATA </p>
+                                    <p>SUCCESS</p>
+                                </div>
+                            </div>
+                            <div *ngIf="sendingError" class="animate__animated animate__flash animate__fast animate__infinite">
+                                <div [ngStyle]="{color: 'red'}" class="d-flex justify-content-between">
+                                    <p>// SENDING DATA </p>
+                                    <p>ERROR</p>
+                                </div>
+                            </div>
+                            <div *ngIf="cooldown > 0" class="animate__animated animate__flash animate__slow animate__infinite">
+                                <div class="d-flex justify-content-between">
+                                    <p>// POR FAVOR, ESPERE... </p>
+                                    <p>{{ cooldown }}</p>
+                                </div>
+                            </div>            
                         </div>
                     </div>
                 </div>
